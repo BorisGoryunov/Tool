@@ -3,10 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DatabaseUpdater"
+        xmlns:local="clr-namespace:DatabaseUpdater.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="{Binding Path=Title}" Height="400" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="Gray"
+        ResizeMode="CanResizeWithGrip"
+        >
+  <Window.DataContext>
+    <local:Main/>
+  </Window.DataContext>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="23"/>
+    </Grid.RowDefinitions>
+    <ContentControl Content="{Binding Path=View}"  Grid.Row="0" Margin="5"/>
+    <StatusBar Grid.Row="1"/>
+  </Grid>
 </Window>

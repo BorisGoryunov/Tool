@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DatabaseUpdater
+namespace DatabaseUpdater.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UpdaterView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UpdaterView : UserControl
     {
-        public MainWindow()
+        public UpdaterView()
         {
             InitializeComponent();
-            (DataContext as ViewModel.Main).Initialize();
         }
     }
 }
